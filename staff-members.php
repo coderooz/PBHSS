@@ -1,0 +1,6 @@
+<?php require_once('./resources/header.php') ?><section class="text-gray-400 body-font bg-gray-900"><div class="container px-5 py-24 mx-auto"><div class="flex flex-wrap w-full mb-20"><div class="lg:w-1/2 w-full mb-6 lg:mb-0"><h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">School Staff-members</h1><div class="h-1 w-25 bg-indigo-500 rounded"></div></div></div><div class="flex flex-wrap -m-4 mb-20" id="teachingMemebers"><div class="flex flex-col text-center w-full mb-5" ><h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" style="display:none">Teaching Staff-members</h1></div></div></div></section>
+
+
+<script>window.onload=function(){httpGet('POST','./resources/requires/require.php',{type: 'getStaff'},function(p){if (p.status == 'success'){document.querySelector('#teachingMemebers').innerHTML += p.data;}else if(p.status=='failed'){let pm=p.message;if(pm==''){alert('Network error. Reload Again!');}else{alert(p.message)}}})}
+</script>
+<?php require_once('./resources/footer.php') ?>
